@@ -1,0 +1,224 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --yellow:#f5bf23;
+  --black:#111;
+  --white:#fff;
+  --light-color:#666;
+  --light-bg:#eee;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+  --red: rgb(197, 68, 68);
+}
+
+$yellow:#f5bf23;
+$black: #111;
+$white: #fff;
+$light-color:#666;
+$light-bg: #eee;
+$light-bg2: rgba(169, 166, 166, 0.864);
+$box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+$border: .1rem solid rgba(0,0,0,.3);
+$red: rgb(197, 68, 68);;
+$green: rgb(31, 116, 31);
+
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax($val,1fr));
+  gap: 2rem;
+}
+
+@mixin  titleText($titleSize) {
+  font-size: $titleSize;
+  color: $black;
+  text-transform: capitalize;
+}
+
+@mixin  graphText($graphText) {
+  font-size: $graphText;
+  color: $light-color;
+  line-height: 1.5;
+}
+
+@mixin  iconBox() {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: $light-bg;
+  color: $black;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+  &:hover {
+      background: $red;
+      color: $white;
+  }
+}
+
+@mixin  iconBox2() {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  background: $light-bg2;
+  border-radius: 50%;
+  color: $black;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+@mixin  iconBox3() {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  color: $black;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+ 
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: $black;
+  color: $white;
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  transition: all 0.5s;
+  margin: 2rem;
+  &:hover {
+    background: $red;
+    color: $black;
+  }
+}
+
+.btn2 {
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  border:  0.2rem solid $red;
+  color: $red;
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin-top: 1rem;
+  transition: all 0.5s;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: $red;
+    transition: 0.3s linear;
+    z-index: -1;
+    
+  }
+
+  .btn3 {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: $black;
+    color: $white;
+    // cursor: pointer;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    transition: all 0.5s;
+    cursor: not-allowed;
+    // &:hover {
+    //   background: $red;
+    //   color: $black;
+    // }
+  }
+
+
+
+  &:hover {
+    color: white;
+  }
+
+  &:hover::before {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: $red;
+  padding: 1rem; 
+  span {
+    color: $yellow;
+  }
+  i {
+    
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+section {
+  padding: 2rem 9% ;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+  transition: all 0.5s;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+  height: 3rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--red);
+}
+
+@import 'Header/header';
+@import 'Home/home';
+@import 'Product/product';
+@import 'About/about';
+@import 'Service/service';
+@import 'BaoDuongDev/baoDuongDev';

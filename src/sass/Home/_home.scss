@@ -1,0 +1,60 @@
+.home {
+    .slide {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: url(../../../public/images/background.jpg) no-repeat;
+        background-size: cover;
+        .content {
+            flex: 1 1 40rem;
+            padding-top: 6.5rem;
+            h3 {
+                @include titleText(5rem);
+                color: #fff;
+                font-weight: bolder;
+            }
+            p {
+                @include titleText(1.7rem);
+                color: #fff;
+                font-weight: bolder;
+            }
+        }
+    
+        .image {
+            flex: 1 1 40rem;
+            img {
+                width: 100%;
+                padding: 1rem;
+                animation:float 3s linear infinite ;
+            }
+        }
+    }
+    .swiper-button-next,.swiper-button-prev {
+        height: 7rem;
+        width: 7rem;
+        font-size: 3rem;
+        background: rgba(253, 253, 253, 0.296);
+        transition: all 0.5s ease;
+
+        &:hover {
+            background: rgba(221, 171, 171, 0.467);
+        }
+    }
+
+    .swiper-button-next::after,.swiper-button-prev::after {
+        font-size: 2rem;
+        color: $black;
+    } 
+}
+@keyframes float {
+    0%,100% {
+        transform:  translateY(0rem);
+    }
+    50% {
+        transform: translateY(3rem);
+    }
+}
+
